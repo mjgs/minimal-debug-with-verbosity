@@ -1,0 +1,18 @@
+{
+  "name": "minimal-debug-with-verbosity",
+  "version": "0.0.1",
+  "description": "Minimal example of using debug module with verbocity",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo not implemented yet"
+  },
+  "keywords": [
+    "minimal"
+  ],
+  "author": "Mark Smith",
+  "private": true,
+  "dependencies": {
+    "debug": "^4.2.0",
+    "chalk": "^3.0.0"
+  }
+}
