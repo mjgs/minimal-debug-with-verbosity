@@ -7,12 +7,12 @@ console.log(`VERBOSITY: [${process.env.VERBOSITY}]`);
 
 function log(msg, level = 'none', color) {
   const verbosities = ['none','info','debug','silly'];
-  const verbosity = verbosities.indexOf(level || 'none');
+  const verbosity = verbosities.indexOf(VERBOSITY || 'none');
   const colorized = (typeof color !== 'undefined') ?
     chalk[color](msg) :
     msg;
   if (typeof DEBUG === 'string') { 
-    if (verbosity >= level) {
+    if (verbosity >= verbosities.indexOf(level)) {
       debug(msg);
     } 
   }
