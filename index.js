@@ -2,8 +2,6 @@ const debug = require('debug')('minimal-debug-with-verbosity:index');
 
 const chalk = require('chalk');
 
-const log = require('./log');
-
 console.log(`DEBUG: [${process.env.DEBUG}]`);
 
 const verbosity = [
