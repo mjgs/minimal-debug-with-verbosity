@@ -16,7 +16,7 @@ function log(msg, level = 'none', color) {
       debug(`debug: ${msg}`);
     } 
   }
-  else {
+  else if (verbosity === 0) {
     console.log(colorized);
   }
 }
