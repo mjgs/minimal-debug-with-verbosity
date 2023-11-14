@@ -3,6 +3,7 @@ const debug = require('debug')('minimal-debug-with-verbosity:index');
 const chalk = require('chalk');
 
 console.log(`DEBUG: [${process.env.DEBUG}]`);
+console.log(`VERBOSITY: [${process.env.VERBOSITY}]`);
 
 const verbosity = [
  'none',
@@ -10,8 +11,6 @@ const verbosity = [
  'debug',
  'silly' 
 ].indexOf(process.env.VERBOSITY || 'none');
-
-console.log(`verbosity: [${verbosity}]`);
 
 function log(msg, level = 'none', color) {
   const colorized = (typeof color !== 'undefined') ?
