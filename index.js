@@ -20,7 +20,7 @@ function log(msg, level = 'none', color) {
     console.log(colorized);
   }
   else if (verbosity >= level) { 
-    debug(msg); 
+    //debug(msg); 
   }
 }
 
