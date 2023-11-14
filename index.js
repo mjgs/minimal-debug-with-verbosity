@@ -17,11 +17,11 @@ function log(msg, level = 'none', color) {
   const colorized = (typeof color !== 'undefined') ?
     chalk[color](msg) :
     msg;
-  if ((typeof DEBUG === 'undefined') || (DEBUG === '') || (DEBUG === undefined)) { 
-    console.log(colorized);
+  if (typeof DEBUG === 'string') {
+    debug(msg);
   }
   else if (verbosity >= level) { 
-    //debug(msg); 
+    console.log(colorized);
   }
 }
 
