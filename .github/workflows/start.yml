@@ -34,6 +34,6 @@ jobs:
           
       - name: Start
         env:
-          VERBOSITY: 'info'
+          VERBOSITY: 'debug'
           DEBUG: 'minimal-debug-with-verbosity:index'
         run: cd $repo_dir && npm start
