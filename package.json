@@ -4,7 +4,7 @@
   "description": "Minimal example of using debug module with verbocity",
   "main": "index.js",
   "scripts": {
-    "start": "echo not implemented yet"
+    "start": "node index.js"
   },
   "keywords": [
     "minimal"

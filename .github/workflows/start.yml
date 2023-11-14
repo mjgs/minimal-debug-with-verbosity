@@ -1,0 +1,39 @@
+name: Start
+on:
+  push:
+    branches: 
+      - main
+      - development
+      - fix-*
+      - feature-*
+  workflow_dispatch:
+  
+env:
+  nodejs_version: 16.14.2
+  repo_dir: repo
+ 
+jobs:
+  build:
+    name: Start
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Clone Deploy Repository (Latest)
+        uses: actions/checkout@v3
+        if: ${{ github.event.inputs.git_ref == '' }}
+        with:
+          path: ${{ env.repo_dir }}
+          
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.nodejs_version }}
+
+      - name: Install NodeJS modules
+        run: cd $repo_dir && npm install
+          
+      - name: Start
+        env:
+          VERBOSITY: 'none'
+          DEBUG:
+        run: cd $repo_dir && npm start
