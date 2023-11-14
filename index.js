@@ -13,7 +13,7 @@ function log(msg, level = 'none', color) {
     msg;
   if (typeof DEBUG === 'string') { 
     if (verbosity >= verbosities.indexOf(level)) {
-      debug(msg);
+      debug(`debug: ${msg}`);
     } 
   }
   else{
